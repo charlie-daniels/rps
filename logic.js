@@ -18,12 +18,8 @@ function playRound(playerSelection, computerSelection) {
     
     if(playerSelection === 'ROCK' && computerSelection === 'PAPER') {
         return 'You lose! Paper beats rock!';
-    } else if(playerSelection === 'ROCK' && computerSelection === 'ROCK') {
-        return 'Draw!';
     } else if(playerSelection === 'ROCK' && computerSelection === 'SCISSORS'){
         return 'You win! Rock beats scissors!';
-    } else if(playerSelection === 'PAPER' && computerSelection === 'PAPER') {
-        return 'Draw!';
     } else if(playerSelection === 'PAPER' && computerSelection === 'ROCK') {
         return 'You win! Paper beats rock!';
     } else if(playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
@@ -32,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
         return 'You win! Scissors beats paper!';
     } else if(playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
         return 'You lose! Rock beats scissors!';
-    } else if(playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS') {
+    } else {
         return 'Draw!';
     }
 }
