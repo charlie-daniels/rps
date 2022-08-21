@@ -3,11 +3,11 @@ function getComputerChoice() {
 
     switch(choice) {
     case 0:
-        return 'Rock';
+        return 'ROCK';
     case 1:
-        return 'Paper';
+        return 'PAPER';
     case 2:
-        return 'Scissors';
+        return 'SCISSORS';
     default:
         return '';
     }
@@ -34,6 +34,14 @@ function playRound(playerSelection, computerSelection) {
         return 'You lose! Rock beats scissors!';
     } else if(playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS') {
         return 'Draw!';
+    }
+}
+
+function game(rounds) {
+    for (let i = 0; i < rounds; i++) {
+        let player = prompt('Enter choice:');
+        let computer = getComputerChoice();
+        console.log(playRound(player, computer));
     }
 }
 
