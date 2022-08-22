@@ -33,18 +33,32 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game(rounds) {
-    for (let i = 0; i < rounds; i++) {
-        let player = prompt('Enter choice:');
-        let computer = getComputerChoice();
-        console.log(playRound(player, computer));
-    }
-}
-
+const divResults = document.querySelector('.results');
+const divScore = document.querySelector(".score");
 const buttons = document.querySelectorAll('button');
+
 buttons.forEach(b => b.addEventListener('click', () => {
     let player = b.textContent;
     let computer = getComputerChoice();
-    console.log(playRound(player, computer));
+    let result = playRound(player, computer);
+
+    divResults.textContent = result;
 }));
 
+let scorePlayer = 0;
+let scoreComputer = 0;
+
+divScore.textContent = `${scorePlayer} - ${scoreComputer}`;
+
+function resetScores() {
+    scorePlayer = 0;
+    scoreComputer = 0;
+}
+
+if (scorePlayer === 5) {
+    divResults.textContent = "Player wins!";
+    resetScores();
+} else if (scoreComputer === 5){
+    divResults.textContent = "Computer wins!";
+    resetScores();
+}
