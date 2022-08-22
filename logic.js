@@ -41,3 +41,10 @@ function game(rounds) {
     }
 }
 
+const buttons = document.querySelectorAll('button');
+buttons.forEach(b => b.addEventListener('click', () => {
+    let player = b.textContent;
+    let computer = getComputerChoice();
+    console.log(playRound(player, computer));
+}));
+
